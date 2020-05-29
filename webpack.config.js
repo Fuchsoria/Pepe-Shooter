@@ -4,7 +4,7 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'app.bundle.js'
+        filename: 'assets/scripts/app.bundle.js'
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json']
