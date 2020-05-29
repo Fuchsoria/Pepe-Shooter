@@ -69,6 +69,10 @@ export default class PepeUI {
     return number;
   }
 
+  get pepePoolLength() {
+    return this.pepePool.length;
+  }
+
   addPepeInPool({ id, element, animation }: Pepe) {
     this.pepePool.push({ id, element, animation });
   }
@@ -137,8 +141,6 @@ export default class PepeUI {
       pepe.animation?.pause();
 
       setTimeout(() => this.removePepe({ id: pepe.id }), 1500);
-
-      this.renderPepe();
     }
   };
 

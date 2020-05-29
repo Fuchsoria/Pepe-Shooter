@@ -55,6 +55,8 @@ export default class PepeShooter {
         this.pepeUI.pepeDead({ id });
         this.incrementCounter();
       }
+
+      this.pepeUI.renderPepe();
     }
   };
 

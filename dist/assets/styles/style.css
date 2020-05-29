@@ -27,10 +27,12 @@ body {
   user-select: none;
   -webkit-user-drag: none;
   -webkit-user-modify: read-only;
+  z-index: 99;
 }
 
 .pepe_dead {
   opacity: 0.5;
+  z-index: 1;
 }
 
 .info {
