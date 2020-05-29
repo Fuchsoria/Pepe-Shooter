@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap');
+
 body {
   margin: 0;
   overflow: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -28,4 +31,21 @@ body {
 
 .pepe_dead {
   opacity: 0.5;
+}
+
+.info {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.info__start {
+  outline: none;
+  border: 1px black solid;
+  cursor: pointer;
+}
+
+.info__text {
+  font-size: 30px;
+  margin: 0 15px;
 }

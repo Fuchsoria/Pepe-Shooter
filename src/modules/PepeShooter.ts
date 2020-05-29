@@ -7,11 +7,14 @@ export default class PepeShooter {
   private readonly gameTime: number;
   private readonly pepeUI: PepeUI;
   private count: number = 0;
+  private time: number;
+  private gameInterval: number = 0;
 
   constructor({ maxPepe, gameTime, pepeUI }: PepeShooterTypes) {
     this.maxPepe = maxPepe;
     this.gameTime = gameTime;
     this.pepeUI = pepeUI;
+    this.time = gameTime;
   }
 
   private updateScore() {
@@ -34,6 +37,14 @@ export default class PepeShooter {
     this.updateScore();
   }
 
+  private updateTime() {
+    const { time } = this.pepeUI.containers;
+
+    if (time) {
+      time.textContent = String(this.time);
+    }
+  }
+
   private handleShoot = (event: MouseEvent) => {
     const target = event.target as HTMLElement;
 
@@ -52,16 +63,15 @@ export default class PepeShooter {
 
     startButton?.addEventListener('click', this.startGame);
     backGround?.addEventListener('click', this.handleShoot);
+
+    this.updateTime();
   }
 
-  private handleTime = (seconds: Number) => {
-    const { time } = this.pepeUI.containers;
+  private handleTime = () => {
+    this.time -= 1;
+    this.updateTime();
 
-    if (time) {
-      time.textContent = String(seconds);
-    }
-
-    if (seconds <= 0) {
+    if (this.time <= 0) {
       this.stopGame();
     }
   };
@@ -74,14 +84,15 @@ export default class PepeShooter {
       this.pepeUI.renderPepe();
     }
 
-    for (let i = this.gameTime; i >= 0; i--) {
-      setTimeout(() => {
-        this.handleTime(i);
-      }, (this.gameTime - i) * 1000);
-    }
+    this.gameInterval = setInterval(() => {
+      this.handleTime();
+    }, 1000);
   };
 
   private stopGame = () => {
+    clearInterval(this.gameInterval);
+    this.time = this.gameTime;
+    this.updateTime();
     this.pepeUI.removeAllPepe();
   };
 }

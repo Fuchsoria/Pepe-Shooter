@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pepeDeadImageName: 'pepe-second.png',
   });
 
-  const shooter = new PepeShooter({ maxPepe: 5, gameTime: 10, pepeUI: ui });
+  const shooter = new PepeShooter({ maxPepe: 5, gameTime: 5, pepeUI: ui });
 
   shooter.addStartHandlers();
 });
