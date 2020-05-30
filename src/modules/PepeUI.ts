@@ -88,6 +88,7 @@ export default class PepeUI {
     element.src = `./assets/images/${this.pepeImageName}`;
     element.classList.add('pepe');
     element.setAttribute('data-id', id);
+    element.setAttribute('draggable', 'false');
     element.style.top = `${startPosition.top}%`;
     element.style.left = `${startPosition.left}%`;
 

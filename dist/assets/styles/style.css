@@ -12,21 +12,30 @@ body {
 }
 
 .background {
+  cursor:  auto;
+  cursor: url(../images/cursor.png), auto;	
   position: relative;
   width: 100%;
   height: 100%;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .pepe {
   position: absolute;
-  padding: 50px;
   width: 100px;
   height: 100px;
   transform: translate(-50%, -50%);
-  cursor: pointer;
+  user-drag: none;
   user-select: none;
+  -moz-user-select: none;
   -webkit-user-drag: none;
-  -webkit-user-modify: read-only;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   z-index: 99;
 }
 

@@ -64,7 +64,7 @@ export default class PepeShooter {
     const { startButton, backGround } = this.pepeUI.containers;
 
     startButton?.addEventListener('click', this.startGame);
-    backGround?.addEventListener('click', this.handleShoot);
+    backGround?.addEventListener('mousedown', this.handleShoot);
 
     this.updateTime();
   }
